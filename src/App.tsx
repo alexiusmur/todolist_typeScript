@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Todolist, { TaskType } from './components/todolist/Todolist'
 
-import logo from './logo.svg';
+import logo from './logoPng.png';
 import './App.css';
 
 export type FilterValueType = "all" | "completed" | "active"
@@ -41,6 +41,10 @@ function App() {
     setTasks(filteredTasks);
   }
 
+  function changeFilter(value: FilterValueType) {
+    setFilter(value);
+  }
+
   let tasksForTodoList = tasks;
   if (filter === "completed") {
     tasksForTodoList = tasks.filter(t => t.isDone === true);
@@ -52,7 +56,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className='header_logo'>
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
         <h1>
           TaskFlow 
         </h1>
@@ -64,6 +70,7 @@ function App() {
             title="Що вивчити?" 
             tasks={tasksForTodoList}
             removeTask={removeTask}
+            changeFilter={changeFilter}
           />
           {/* <Todolist 
             title="Який фільм/серіал подивитись?"
@@ -77,6 +84,10 @@ function App() {
           /> */}
         </div>
       </section>
+      
+      <footer>
+        <p>by alexiusmur</p>
+      </footer>
     </div>
   );
 }
