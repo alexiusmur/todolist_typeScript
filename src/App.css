@@ -4,24 +4,6 @@ ul{
   padding: 0;
 }
 
-.App {
-  text-align: center;
-  padding: 100px 0 100px 0;
-}
-
-.header_logo{
-  height: 100%;
-  width: 80px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.App-logo {
-  width: 100%;
-}
-
 .App-header {
   max-height: 90px;
 
@@ -38,26 +20,6 @@ ul{
   font-size: calc(10px + 1vmin);
   color: white;
   background-color: #282c34;
-}
-
-.main{
-  display: flex;
-  justify-content: center;
-  text-align: start;
-
-  gap: 50px;
-}
-
-.error{
-  border: red 1px solid;
-}
-
-.error-message{
-  color: red;
-}
-
-.active-filter{
-  background-color: antiquewhite;
 }
 
 .is-done{
