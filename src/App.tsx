@@ -29,33 +29,6 @@ export type TasksStateType = {
 
 function App() {
 
-  // let initTasks = [
-  //   {id: 1, title: "JavaScript", isDone: true},
-  //   {id: 2, title: "React", isDone: true},
-  //   {id: 3, title: "Next.js", isDone: false},
-  // ]
-
-  // let tasks2 = [
-  //   {id: 1, title: "Властелин колец", isDone: true},
-  //   {id: 2, title: "Ходячие мертвецы", isDone: true},
-  //   {id: 3, title: "Битва за Амазонку", isDone: false},
-  // ]
-
-  // let tasks3 = [
-  //   {id: 1, title: "Приготовить кушать", isDone: true},
-  //   {id: 2, title: "Сходить в зал", isDone: true},
-  //   {id: 3, title: "Покодить", isDone: false},
-  //   {id: 4, title: "Прогуляться", isDone: false},
-  // ]
-
-  // let [tasks, setTasks] = useState<Array<TaskType>>([
-  //   {id: v1(), title: "JavaScript", isDone: true},
-  //   {id: v1(), title: "React", isDone: true},
-  //   {id: v1(), title: "Next.js", isDone: false},
-  //   {id: v1(), title: "REST API", isDone: false},
-  //   {id: v1(), title: "GraphQL", isDone: false},
-  // ]);
-
   function removeTask(id: string, todolistId: string) {
     let tasks = tasksObj[todolistId]
     let filteredTasks = tasks.filter( t => t.id !== id)
