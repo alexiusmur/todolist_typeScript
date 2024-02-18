@@ -15,15 +15,16 @@ import './App.css';
 import { Container, Grid, Paper } from '@mui/material';
 
 export type FilterValueType = "all" | "completed" | "active"
-type TodolistType = {
+
+export type TodolistType = {
   id: string
   title: string
   filter: FilterValueType
 }
 
-type TasksStateType = {
-   [key: string]: Array<TaskType>
 
+export type TasksStateType = {
+   [key: string]: Array<TaskType>
 }
 
 function App() {
