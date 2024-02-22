@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {v1} from 'uuid';
+
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -7,10 +9,9 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import Todolist, { TaskType } from './components/todolist/Todolist';
-import {v1} from 'uuid';
 import AddItemForm from './components/AddItemForm';
 
-import logo from './logoPng.png';
+// import logo from './logoPng.png';
 import './App.css';
 import { Container, Grid, Paper } from '@mui/material';
 
