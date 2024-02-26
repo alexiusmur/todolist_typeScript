@@ -1,10 +1,10 @@
-import React, { useState, KeyboardEvent, ChangeEvent  } from 'react'
+import React, { useState, KeyboardEvent, ChangeEvent, useCallback  } from 'react'
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import { FilterValueType } from '../../App';
-import AddItemForm from '../AddItemForm';
+import { AddItemForm } from '../AddItemForm';
 import EditableSpan from '../editableSpan/EditableSpan';
 
 export type TaskType = {
@@ -13,7 +13,6 @@ export type TaskType = {
     isDone: boolean
 }
 
-
 type PropsType = {
     id: string
     title: string
@@ -21,7 +20,7 @@ type PropsType = {
     removeTask: (id: string,  todolistId: string) => void
     changeFilter: (value: FilterValueType, todolistId: string) => void
     addTask: (title: string,  todolistId: string) => void
-    changeTaskStatus: (taskId: string, isDone: boolean,  todolistId: string) => void
+    changeTaskStatus: (id: string, isDone: boolean,  todolistId: string) => void
     changeTaskTitle: (taskId: string, newTitle: string,  todolistId: string) => void
     filter: FilterValueType;
     removeTodolist: (todolistId: string) => void;
@@ -42,13 +41,14 @@ export default function Todolist(props: PropsType) {
     const onActiveClickHandler = () =>  props.changeFilter("active", props.id);
     const onComplitedClickHandler = () => props.changeFilter("completed", props.id);
     const removeTodolist = () => {props.removeTodolist(props.id)};
-    const changeTodolistTitle = (newTitle: string) => {
-        props.changeTodolistTitle(props.id, newTitle)
+    const changeTodolistTitle = (title: string) => {
+        props.changeTodolistTitle(props.id, title)
     };
 
-    const addTask = (title: string) => {
-        props.addTask(title, props.id);
-    }
+    const addTask = useCallback((title: string) => {
+        const result = props.addTask(title, props.id);
+    console.log('Компонент: Результат addTask:', result);
+    }, [props])
 
   return (
     <div>
